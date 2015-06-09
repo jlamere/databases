@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>What Database Should I Use?</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="jumbotron">
+<center>
+  <h1>What database should I use?</h1>
+  <p>Blah blah blah blah</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Take the quiz!</a></p>
+</center>
+</div>
+
+<div class="container row">
+  <div class="col-md-9 col-md-offset-3">
+    <h2>Relational vs Nonrelational</h2>
+    <p>Relational databases are the 'old school' databases, like SQL. Non relational databases are the 'trendier' databases, such as MongoDB. Relational databases are stored similarly to an Excel spreadsheet. Non-relational databases does not store data in the tabular method. Because the data is stored differently, it effects the speed, scaling, and complexity of the database. When choosing between a relational or nonrelational database, the most important question to ask is <b> Do I care about the relations between the data? </b> An example of this is a system that uses lots of joins to combine rows for multiple tables. </p>            
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Relational</th>
+          <th>Nonrelational</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Queries</th>
+          <td>Can handle more complicated queries (like joins, for example)</td>
+          <td>Better at simpler queries</td>
+        </tr>
+        <tr>
+          <th>Ease of Scaling</th>
+          <td>Harder to scale (vertical scaling)</td>
+          <td>Easier to scale (horizontal scaling)</td>
+        </tr>
+        <tr>
+          <th>Reliability</th>
+          <td>Single Point of Failure</td>
+          <td>Data is replicated/spread out</td>
+        </tr>
+        <tr>
+          <th>Data type</th>
+          <td>Strucred data only</td>
+          <td>Unstructured data</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="container row">
+  <div class="col-md-9 col-md-offset-3">
+    <h2>Different types of NRDBs</h2>
+    <p> There are a lot of different types of nonrelational databases. A whole lot. They all function in very different ways, from the way one can store data, from the type of data that can be stored, to the difficulty in setting up the database. I would recommend using this chart to get an overall view of different types of NRDBs, but you'll definitely want to read a little bit more into the architecture of the different systems.</p>
+    <p> NRDBs usually split up the data, and stores it in different, individually scalable areas, rather than keeping it all together like in a relational database. While the database is typically very scalable and there usually is not one single point of failure, there are downsides, such as very expensive joins.</p> 
+    <p> An important theorem used in NRDBs is the <b>CAP theorem - Consistency, Avaliability and Partion Tolerance. </b> It is believed that in a NRDB, tradeoffs need to be made between these three categories. So a very avaliable system would also have a very low consistency.</p>            
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>NRDB</th>
+          <th>MongoDB</th>
+          <th>Cassandra</th>
+          <th>Redis</th>
+          <th>Hadoop</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th> Schema </th>
+          <td> Extremely flexible </td>
+          <td> Less flexible than Mongo, but still flexible </td>
+          <td> Flexible in that it supports abstract data strings </td>
+          <td> Flexible data types </td>
+        </tr>
+        <tr>
+          <th> Ease of Use </th>
+          <td> Easy set up</td>
+          <td> Moderate set up </td>
+          <td> Most difficult set up </td>
+          <td> Fairly difficult set up </td>
+        </tr>
+        <tr>
+          <th> Architecture </th>
+          <td> Master/Slave</td>
+          <td> Distributed clusters </td>
+          <td> Master/Slave </td>
+          <td> Distributed clusters </td>
+        </tr>
+          <tr>
+          <th> General Speed </th>
+          <td> Slower writes due to a lock system</td>
+          <td> Constant write time</td>
+          <td> Read/write at the same rate </td>
+          <td> Very slow, especially with small data sets </td>
+        </tr>
+        <tr>
+          <th> Speed at Scale</th>
+          <td> The more writes, the slower it is</td>
+          <td> Performs fast even at scale </td>
+          <td> Fastest </td>
+          <td> Slowest </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" class="btn btn-link btn-collapse">
+              General Notes
+            </button>
+          </td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr id="collapsableRow" class="collapse out"><td>Should be collapsed</td></tr>
+         <tr>
+          <th> The bottom line</th>
+          <td> Good for new users, looking to try a NRDB. Also, can take any kind of doc you throw at it. Great if aren't fully sure how you plan to query your data, as it is very flexible.</td>
+          <td> Distributed storage system that's eventually consistent. A little tricky to set up, but performs well at scale. </td>
+          <td> Complex data type key value stores. The in memory database can perform some complicated queries, and fast. </td>
+          <td> Perfect for storing huge sets of data that you plan on performing batch jobs on at the end of the day. </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+
+
+<script>
+$(".btn-collapse").click(function() {
+    if($("#collapsableRow").hasClass("out")) {
+        $("#collapsableRow").addClass("in");
+        $("#collapsableRow").removeClass("out");
+    } else {
+        $("#collapsableRow").addClass("out");
+        $("#collapsableRow").removeClass("in");
+    }
+});
+</script>
+</html>
