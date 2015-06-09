@@ -8,6 +8,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
+<style>
+#footer{
+  background-color: #2F343B;
+  height: 4%;
+  position: fixed;
+  bottom:0px;
+  width:100%;
+  color: #7E827A;
+}
+#footer a{
+  color: #C77966;
+}
+
+</style>
 <body>
 <div class="jumbotron">
 <center>
@@ -130,7 +144,11 @@
 
 </body>
 
-
+<div id ="footer">
+<center>
+Created by <a href = "https://twitter.com/imjen"> @imjen</a>. <a href = "mailto:jennielamere@gmail.com">Email</a> or <a href = "https://github.com/jlamere/databases"> fork </a> any issues.
+</center>
+</div>
 <script>
 $(".btn-collapse").click(function() {
     if($("#collapsableRow").hasClass("out")) {
