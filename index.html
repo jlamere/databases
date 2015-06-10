@@ -16,11 +16,14 @@
   bottom:0px;
   width:100%;
   color: #7E827A;
+  margin-top: 4%;
 }
 #footer a{
   color: #C77966;
 }
-
+body{
+  padding-bottom: 4%;
+}
 </style>
 <body>
 <div class="jumbotron">
@@ -34,7 +37,7 @@
 <div class="container row">
   <div class="col-md-9 col-md-offset-3">
     <h2>Relational vs Nonrelational</h2>
-    <p>Relational databases are the 'old school' databases, like SQL. Non relational databases are the 'trendier' databases, such as MongoDB. Relational databases are stored similarly to an Excel spreadsheet. Non-relational databases does not store data in the tabular method. Because the data is stored differently, it effects the speed, scaling, and complexity of the database. When choosing between a relational or nonrelational database, the most important question to ask is <b> Do I care about the relations between the data? </b> An example of this is a system that uses lots of joins to combine rows for multiple tables. </p>            
+    <p>Relational databases are the 'old school' databases, like SQL. Non relational databases are the 'trendier' databases, such as MongoDB. Relational databases are stored similarly to an Excel spreadsheet, with a value corresponding to a row and a column. Non-relational databases does not store data in the tabular method (how the data is actually stored varies by database). Because the data is stored differently, it effects the speed, scaling, and complexity of the database. If your data would fit well in a table, then you most likely would want a relational database. When choosing between a relational or nonrelational database, the most important question to ask is <b> Do I care about the relations between the data? </b> An example of this is a system that uses lots of joins to combine rows from multiple tables. </p>            
     <table class="table table-striped">
       <thead>
         <tr>
@@ -53,11 +56,6 @@
           <th>Ease of Scaling</th>
           <td>Harder to scale (vertical scaling)</td>
           <td>Easier to scale (horizontal scaling)</td>
-        </tr>
-        <tr>
-          <th>Reliability</th>
-          <td>Single Point of Failure</td>
-          <td>Data is replicated/spread out</td>
         </tr>
         <tr>
           <th>Data type</th>
@@ -87,10 +85,17 @@
         </tr>
       </thead>
       <tbody>
+      <tr>
+          <th> Storage Type </th>
+          <td> Documents</td>
+          <td> Wide columns </td>
+          <td> Datastructures </td>
+          <td> (?) </td>
+        </tr>
         <tr>
           <th> Schema </th>
           <td> Extremely flexible </td>
-          <td> Less flexible than Mongo, but still flexible </td>
+          <td> Least flexible </td>
           <td> Flexible in that it supports abstract data strings </td>
           <td> Flexible data types </td>
         </tr>
