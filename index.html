@@ -10,40 +10,50 @@
 </head>
 <style>
 #footer{
-  background-color: #2F343B;
+  background-color: #1D2438;
   height: 4%;
   position: fixed;
   bottom:0px;
   width:100%;
-  color: #7E827A;
+  color: #79827A;
   margin-top: 4%;
-}
-#footer a{
-  color: #C77966;
 }
 body{
   padding-bottom: 4%;
 }
+a{
+  color:#C77966;
+}
+a:hover{
+  color :#703030;
+}
+#header{
+  color: #1D2438;
+}
 </style>
 <body>
-<div class="jumbotron">
-<center>
-  <h1>What database should I use?</h1>
-  <p>Blah blah blah blah</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Take the quiz!</a></p>
-</center>
-</div>
+  <div class="jumbotron"><center>
+    <h1 id = "header">What database should I use?</h1> 
+    <div class="container row">
+    <div class="col-md-8 col-md-offset-2"><p>
+    Nowadays, there are a lot of different databases. They all function extremely differently, so it can be tricky to know what database would suit a specific project best. This aim of this tool is to be a quick and easy way to compare different databases, and see which one would work best for you.
+    </p></div></div>
+    <button type="button" class="btn btn-info btn-small" data-toggle="modal" data-target="#myModal"> Take the quiz!</button>
+
+  </center></div>
+
+
 
 <div class="container row">
-  <div class="col-md-9 col-md-offset-3">
+  <div class="col-md-10 col-md-offset-2">
     <h2>Relational vs Nonrelational</h2>
     <p>Relational databases are the 'old school' databases, like SQL. Non relational databases are the 'trendier' databases, such as MongoDB. Relational databases are stored similarly to an Excel spreadsheet, with a value corresponding to a row and a column. Non-relational databases does not store data in the tabular method (how the data is actually stored varies by database). Because the data is stored differently, it effects the speed, scaling, and complexity of the database. If your data would fit well in a table, then you most likely would want a relational database. When choosing between a relational or nonrelational database, the most important question to ask is <b> Do I care about the relations between the data? </b> An example of this is a system that uses lots of joins to combine rows from multiple tables. </p>            
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Category</th>
-          <th>Relational</th>
-          <th>Nonrelational</th>
+          <th><a href = "http://en.wikipedia.org/wiki/Relational_database"> Relational</a></th>
+          <th><a href = "http://en.wikipedia.org/wiki/NoSQL"> Nonrelational </a></th>
         </tr>
       </thead>
       <tbody>
@@ -69,19 +79,19 @@ body{
 
 
 <div class="container row">
-  <div class="col-md-9 col-md-offset-3">
+  <div class="col-md-10 col-md-offset-2">
     <h2>Different types of NRDBs</h2>
     <p> There are a lot of different types of nonrelational databases. A whole lot. They all function in very different ways, from the way one can store data, from the type of data that can be stored, to the difficulty in setting up the database. I would recommend using this chart to get an overall view of different types of NRDBs, but you'll definitely want to read a little bit more into the architecture of the different systems.</p>
     <p> NRDBs usually split up the data, and stores it in different, individually scalable areas, rather than keeping it all together like in a relational database. While the database is typically very scalable and there usually is not one single point of failure, there are downsides, such as very expensive joins.</p> 
-    <p> An important theorem used in NRDBs is the <b>CAP theorem - Consistency, Avaliability and Partion Tolerance. </b> It is believed that in a NRDB, tradeoffs need to be made between these three categories. So a very avaliable system would also have a very low consistency.</p>            
+    <p> An important theorem used in NRDBs is the <b><a href = "http://en.wikipedia.org/wiki/CAP_theorem"> CAP theorem </a> - Consistency, Avaliability and Partion Tolerance. </b> It is believed that in a NRDB, tradeoffs need to be made between these three categories. So a very avaliable system would also have a very low consistency.</p>            
     <table class="table table-striped">
       <thead>
         <tr>
           <th>NRDB</th>
-          <th>MongoDB</th>
-          <th>Cassandra</th>
-          <th>Redis</th>
-          <th>Hadoop</th>
+          <th><a href = "https://www.mongodb.org/"> MongoDB</a></th>
+          <th><a href = "http://cassandra.apache.org/">Cassandra</a></th>
+          <th><a href = "http://redis.io/">Redis</a></th>
+          <th><a href = "http://hadoop.apache.org">Hadoop</a></th>
         </tr>
       </thead>
       <tbody>
@@ -90,7 +100,7 @@ body{
           <td> Documents</td>
           <td> Wide columns </td>
           <td> Datastructures </td>
-          <td> (?) </td>
+          <td> Distributed file system/MapReduce </td>
         </tr>
         <tr>
           <th> Schema </th>
@@ -128,17 +138,17 @@ body{
           <td> Slowest </td>
         </tr>
         <tr>
-          <td>
-            <button type="button" class="btn btn-link btn-collapse">
+          <th>
+            <a class="btn-collapse">
               General Notes
-            </button>
-          </td><td></td><td></td><td></td><td></td>
+            </a>
+          </th><td></td><td></td><td></td><td></td>
         </tr>
         <tr id="collapsableRow" class="collapse out"><td>Should be collapsed</td></tr>
          <tr>
           <th> The bottom line</th>
           <td> Good for new users, looking to try a NRDB. Also, can take any kind of doc you throw at it. Great if aren't fully sure how you plan to query your data, as it is very flexible.</td>
-          <td> Distributed storage system that's eventually consistent. A little tricky to set up, but performs well at scale. </td>
+          <td> Splits your data up into 'keyspaces', with 'column families', then rows and then columns and values. Spreads data around clusters. A little tricky to set up, but performs very well at scale. </td>
           <td> Complex data type key value stores. The in memory database can perform some complicated queries, and fast. </td>
           <td> Perfect for storing huge sets of data that you plan on performing batch jobs on at the end of the day. </td>
         </tr>
@@ -148,6 +158,30 @@ body{
 </div>
 
 </body>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Modal Header</h4>
+    </div>
+    <div class="modal-body">
+      <p>Some text in the modal.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+
 
 <div id ="footer">
 <center>
