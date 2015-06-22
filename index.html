@@ -38,7 +38,7 @@ a:hover{
     <div class="col-md-8 col-md-offset-2"><p>
     Nowadays, there are a lot of different databases. They all function extremely differently, so it can be tricky to know what database would suit a specific project best. This aim of this tool is to be a quick and easy way to compare different databases, and see which one would work best for you.
     </p></div></div>
-    <button type="button" class="btn btn-info btn-small" data-toggle="modal" data-target="#myModal"> Take the quiz!</button>
+   
 
   </center></div>
 
@@ -144,7 +144,13 @@ a:hover{
             </a>
           </th><td></td><td></td><td></td><td></td>
         </tr>
-        <tr id="collapsableRow" class="collapse out"><td>Should be collapsed</td></tr>
+        <tr id="collapsableRow" class="collapse out">  
+        <td></td>
+        <td> Good if you don't know how you're going to query your data yet </td>
+        <td> Eventually consistent <br> No single point of failure </td>
+        <td>Data must fit in memory <br> Supports very advanced queries </td>
+        <td> Flexible data types <br>  Can store lots of data </td>
+        </tr>
          <tr>
           <th> The bottom line</th>
           <td> Good for new users, looking to try a NRDB. Also, can take any kind of doc you throw at it. Great if aren't fully sure how you plan to query your data, as it is very flexible.</td>
@@ -158,29 +164,6 @@ a:hover{
 </div>
 
 </body>
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-<div class="modal-dialog">
-
-  <!-- Modal content-->
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Modal Header</h4>
-    </div>
-    <div class="modal-body">
-      <p>Some text in the modal.</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    </div>
-  </div>
-
-  </div>
-</div>
-
-
 
 
 <div id ="footer">
